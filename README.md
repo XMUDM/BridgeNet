@@ -34,19 +34,7 @@ All raw data will be automatically downloaded and processed via PyTorch Geometri
 
 
 
-## Baselines
 
-To facilitate comparative experiments, evaluation scripts for the following state-of-the-art GNN baseline models are also integrated into the testing framework of this repository:
-
-* **SimSGT**
-* **GraphMVP**
-
-You can quickly run the baseline models by modifying the `--model` parameter in the execution command:
-
-```bash
-python -u main.py --model=GraphMVP --dataset=freesolv --task_type=regression --gpu_id=0
-
-```
 
 
 
