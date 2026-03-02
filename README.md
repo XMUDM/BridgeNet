@@ -1,7 +1,3 @@
-Here is the English version of the README tailored for your BridgeNet project.
-
----
-
 # BridgeNet
 
 This repository is the official implementation of the paper **"BridgeNet: A Dual-Curvature Product Manifold Approach for Molecular Property Prediction"**.
