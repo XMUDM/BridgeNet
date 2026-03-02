@@ -19,10 +19,8 @@ It is recommended to use Anaconda or Miniconda to manage your virtual environmen
 * scipy == 1.11.4
 
 ## Datasets
+Our model was evaluated on 9 fundamental datasets from MoleculeNet (BBBP, BACE, ClinTox, Tox21, SIDER, HIV, ESOL, FreeSolv, and Lipophilicity), as well as the quantum chemistry dataset QM9.
 
-This project is evaluated on several standard molecular datasets, comprising a total of **9 main tasks** (3 regression tasks and 6 classification tasks).
-
-* The metrics for the regression tasks have been normalized and aligned during the data processing stage to facilitate a unified evaluation process.
 
 ## Quick Start
 
