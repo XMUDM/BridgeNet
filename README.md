@@ -23,7 +23,6 @@ It is recommended to use Anaconda or Miniconda to manage your virtual environmen
 This project is evaluated on several standard molecular datasets, comprising a total of **9 main tasks** (3 regression tasks and 6 classification tasks).
 
 * The metrics for the regression tasks have been normalized and aligned during the data processing stage to facilitate a unified evaluation process.
-* All molecular graph data and preprocessed features should be placed under the `./data/` directory.
 
 ## Quick Start
 
