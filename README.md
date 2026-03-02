@@ -20,26 +20,19 @@ It is recommended to use Anaconda or Miniconda to manage your virtual environmen
 
 ## Datasets
 Our model was evaluated on 9 fundamental datasets from MoleculeNet (BBBP, BACE, ClinTox, Tox21, SIDER, HIV, ESOL, FreeSolv, and Lipophilicity), as well as the quantum chemistry dataset QM9.
+* **Classification Tasks:** Evaluated using ROC-AUC.
+* **Regression Tasks:** Evaluated using RMSE (for MoleculeNet) or MAE (for QM9). 
+
+All raw data will be automatically downloaded and processed via PyTorch Geometric's dataset classes upon the first run. The preprocessed `.pt` files will be saved in the specified output directory.
+
 
 
 ## Quick Start
 
-1. Clone this repository and install the environmental dependencies listed above.
-2. Run the data preprocessing script to download the data to `./data/` and generate the manifold embeddings required by the algorithm:
-```bash
-python src/data/preprocess.py --dataset_dir ./data/
-
-```
+1. Clone this repository and install the dependencies.
+2. Run the main script to start training and evaluation. The script will automatically trigger data preprocessing if it's the first run. 
 
 
-3. Configure your desired task type (classification or regression) in `./src/models/config.yaml`.
-4. Run the following command to train and evaluate the model:
-
-```bash
-# run the main code for training
-python -u main.py --model=BridgeNet --dataset=tox21 --task_type=classification --gpu_id=0 --epochs=100
-
-```
 
 ## Baselines
 
@@ -55,37 +48,6 @@ python -u main.py --model=GraphMVP --dataset=freesolv --task_type=regression --g
 
 ```
 
----
 
-**Would you like me to help draft the content for the `config.yaml` template, or expand further on the data preprocessing instructions?**
 
-## Environment
 
-Main dependencies required to reproduce the environment:
-* python >= 3.9.0
-* pytorch >= 2.0.0
-* torch_geometric >= 2.3.0
-* torch_scatter
-* e3nn
-* ogb
-* rdkit
-* networkx
-
-## Datasets
-Our model was evaluated on 9 fundamental datasets from MoleculeNet (BBBP, BACE, ClinTox, Tox21, SIDER, HIV, ESOL, FreeSolv, and Lipophilicity), as well as the quantum chemistry dataset QM9.
-* **Classification Tasks:** Evaluated using ROC-AUC.
-* **Regression Tasks:** Evaluated using RMSE (for MoleculeNet) or MAE (for QM9). 
-
-All raw data will be automatically downloaded and processed via PyTorch Geometric's dataset classes upon the first run. The preprocessed `.pt` files will be saved in the specified output directory.
-
-## Quick Start
-
-1. Clone this repository and install the dependencies.
-2. Run the main script to start training and evaluation. The script will automatically trigger data preprocessing if it's the first run. 
-
-```bash
-# Example: Train on Freesolv dataset (Regression)
-python -u main_test_6.py --dataset=Freesolv --epochs=3000 --batch_size=16 --lr=0.001 --output_dir=./data
-
-# Example: Train on Tox21 dataset (Classification)
-python -u main_test_6.py --dataset=Tox21 --epochs=3000 --batch_size=16 --lr=0.001 --output_dir=./data
